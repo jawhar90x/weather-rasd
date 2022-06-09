@@ -1,0 +1,56 @@
+<app-navbar></app-navbar>
+<div class="body">
+
+	<div class="card">
+
+		<div class="  ">
+			<article class="card-body mx-auto" style="max-width: 400px;">
+				<h4 class="card-title mt-3 text-center">Login</h4>
+				<p class="text-center">started with your free account</p>
+				<p>
+					<a href="" class="btn btn-block btn-twitter"> <i class="fab fa-twitter"></i>   Login via Twitter</a>
+					<a href="" class="btn btn-block btn-facebook"> <i class="fab fa-facebook-f"></i>   Login via facebook</a>
+				</p>
+
+				<form [formGroup]="myform" (ngSubmit)="saveUser()">
+					<div class="form-group input-group">
+
+					</div> <!-- form-group// -->
+					<div class="form-group input-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+						</div>
+						<input name="" class="form-control" placeholder="Email address" type="email" formControlemail="email">
+					</div> <!-- form-group// -->
+
+
+					<div class="form-group input-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+						</div>
+						<input class="form-control" placeholder="Create password" type="password" formControlPassword="password">
+					</div> <!-- form-group// -->
+					<div class="form-group input-group">
+						<div *ngIf="password?.invalid && password?.touched">
+							<small *ngIf="password?.errors?.['required']" class="text-danger">password is required<br></small>
+							<small *ngIf="password?.errors?.['pattern']" class="text-danger"> invalid password<br></small>
+						</div>
+
+					</div> <!-- form-group// -->
+					<div class="form-group">
+						<button type="submit" class="btn btn-primary btn-block" [routerLink]="['/weatherservice']"> Login </button>
+					</div> <!-- form-group// -->
+					<p class="text-center">Register for new account <a [routerLink]="['/register']">Register</a> </p>
+				</form>
+			</article>
+		</div> <!-- card.// -->
+
+	</div>
+	<!--container end.//-->
+
+
+
+
+	<app-footer></app-footer>
+
+</div>
